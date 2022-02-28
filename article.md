@@ -4,6 +4,7 @@ This article will explain how I built a Python graphical user interface (GUI) ap
 
 Enough said, let’s dive into the code!
 <br>
+<br>
 
 ### Step 1: Import the main tkinter module and its submodule, ttk 
 
@@ -47,6 +48,7 @@ class App(Tk):
 <br>
 The first task is simply to create a window to contain all the GUI elements. This section is in its own class because it is not integral to the main purpose of the application, and can be reused in future Tkinter projects. I elected to center the window on the screen once the application runs. Additionally, I provided users the ability to set the position of the window, such that if the user reopens the program, it will appear at the coordinates where the user previously positioned it. This is achieved by creating a function that generates a file and records the position of the window. When the application runs, the program will open the file and set the position to the coordinates in said file. 
 <br>
+<br>
 
 ### Step 2: Create GUI elements, also known as, widgets 
 
@@ -71,7 +73,7 @@ class CypherApplication(App):
 
     self.output_box = Text(self.message, width=100, height=15)
     self.output_box.grid(row=3, column=0, padx=10, pady=(10,20))
-    
+
 ```
 
 <br>
@@ -194,10 +196,12 @@ To handle user input errors, I created error message labels which will always be
 
 ```
 
+<br>
 ### Step 3: Create Caesar and Vigenere cypher functions 
 
 A bulk of the code is dedicated to defining the Caesar and Vigenere functions. For the sake of brevity, I will not go into the minute details of these functions in this article. A comprehensive description of these functions will be included in the subsequent article. Please note that both of these cypher functions are excluded from the CypherApplication class, to provide individual testing and easy accessibility to the code. 
 
+<br>
 ### Step 4: Create function to handle cypher methods
 
 ```
@@ -249,8 +253,8 @@ A bulk of the code is dedicated to defining the Caesar and Vigenere functions. F
 <br>
 The principle function in my code conducts the exception handles, manages the options selections, and displays the results. The exception handling is accomplished in this main function because it is best practice to catch (and resolve) errors sooner than later, before proceeding further along the program. Lastly, I elected to create a separate function to display the results simply to provide the program more modularity and easier debugging. 
 <br>
-<br>
 
+<br>
 ### Step 5: Create instance of CypherApplication class
 
 ```
@@ -264,6 +268,7 @@ if __name__ == "__main__":
 <br>
 At the end of every Tkinter application, a mainloop() method must be created in order to keep the program running, until the user closes the window. This method listens for events, executes the script, and updates the GUI accordingly. Finally, I created an instance of the class, and passed in a title and window dimensions. Please note that I added an if statement at the end of my code. This “gate” is used to prevent the program from executing and merely be imported, if I or other programmers import this module.
 
+<br>
 <br>
 And that is all I have for you, folks! If you are interested in the inner workings of my Caesar or Vigenere functions, check out Part 2 of this article. The entirety of my GUI app program is available on GitHub. Thanks for reading and as always, Happy Coding! 
 
