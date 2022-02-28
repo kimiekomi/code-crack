@@ -197,11 +197,13 @@ To handle user input errors, I created error message labels which will always be
 ```
 
 <br>
+
 ### Step 3: Create Caesar and Vigenere cypher functions 
 
 A bulk of the code is dedicated to defining the Caesar and Vigenere functions. For the sake of brevity, I will not go into the minute details of these functions in this article. A comprehensive description of these functions will be included in the subsequent article. Please note that both of these cypher functions are excluded from the CypherApplication class, to provide individual testing and easy accessibility to the code. 
 
 <br>
+
 ### Step 4: Create function to handle cypher methods
 
 ```
@@ -255,6 +257,7 @@ The principle function in my code conducts the exception handles, manages the op
 <br>
 
 <br>
+
 ### Step 5: Create instance of CypherApplication class
 
 ```
