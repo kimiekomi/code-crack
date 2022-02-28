@@ -9,7 +9,7 @@ Enough said, let’s dive into the code!
 
 ### Step 1: Import the main tkinter module and its submodule, ttk         
 
-```
+```python
 
 from tkinter import *
 from tkinter import ttk
@@ -51,7 +51,7 @@ The first task is simply to create a window to contain all the GUI elements. Thi
 
 ### Step 2: Create GUI elements, also known as, widgets         
 
-```
+```python
 
 class CypherApplication(App):
   def __init__(self, title, width, height):
@@ -79,7 +79,7 @@ class CypherApplication(App):
 Every GUI element in Tkinter is considered a widget, including labels, entry fields, text boxes, and buttons. In Tkinter, constructing any widget is always a two-step process. After I created all the necessary widgets, I then added them to the window using the grid method which allows for more customization. The workflow for this application goes from top to bottom then left to right, so that determined the order in which the widgets were positioned.         
        
 
-```
+```python
 
     # Options: Labels, Entries, and Buttons
     self.options = LabelFrame(self, text="Options")
@@ -115,7 +115,7 @@ Every GUI element in Tkinter is considered a widget, including labels, entry fie
 
 The next step involved adding functionality to the buttons. Users are able to select the method and direction in which to cypher their message. To avoid confusion, I disabled an entry field depending on which cypher method was selected.  In other words, if the “Caesar” button was selected, then the keyword entry would be disabled (and vice-a-versa). This was done because the keyword entry only accepts alphabet characters and the offset entry only accepts integers.   
        
-```
+```python
 
     self.encode_decode = StringVar()
 
@@ -151,7 +151,7 @@ The next step involved adding functionality to the buttons. Users are able to se
 To handle user input errors, I created error message labels which will always be hidden unless the user enters “incorrect” data. I also included default settings and values in the application, to expedite the process and enhance the user experience. Whenever the “reset” button is clicked, the program will revert to the default button selections with blank message boxes and hidden error labels.   
          
 
-```
+```python
 
     def reset_fields(self):
       self.input_box.delete(1.0, "end")
@@ -197,7 +197,7 @@ A bulk of the code is dedicated to defining the Caesar and Vigenere functions. F
 
 ### Step 4: Create function to handle cypher methods   
       
-```
+```python
 
     def cypher_message(self, options):
       if debug: print("cypher_message()")
@@ -248,7 +248,7 @@ The principle function in my code conducts the exception handles, manages the op
        
 ### Step 5: Create instance of CypherApplication class    
       
-```
+```python
 
 if __name__ == "__main__":
     app = CypherApplication(title="Cypher GUI", width=775, height=810)
