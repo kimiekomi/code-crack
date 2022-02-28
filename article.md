@@ -8,6 +8,7 @@ Enough said, let’s dive into the code!
 ### Step 1: Import the main tkinter module and its submodule, ttk 
 
 ```
+
 from tkinter import *
 from tkinter import ttk
 
@@ -50,6 +51,7 @@ The first task is simply to create a window to contain all the GUI elements. Thi
 ### Step 2: Create GUI elements, also known as, widgets 
 
 ```
+
 class CypherApplication(App):
   def __init__(self, title, width, height):
       super().__init__(title, width, height)
@@ -112,6 +114,7 @@ The next step involved adding functionality to the buttons. Users are able to se
 <br>
 
 ```
+
     self.encode_decode = StringVar()
 
     self.encode_button = Radiobutton(self.options, text="Encode", variable=self.encode_decode, value="encode")
@@ -146,6 +149,7 @@ To handle user input errors, I created error message labels which will always be
 <br>
 
 ```
+
     def reset_fields(self):
       self.input_box.delete(1.0, "end")
       self.output_box.delete(1.0, "end")
@@ -189,6 +193,7 @@ A bulk of the code is dedicated to defining the Caesar and Vigenere functions. F
 ### Step 4: Create function to handle cypher methods
 
 ```
+
     def cypher_message(self, options):
       if debug: print("cypher_message()")
 
@@ -239,6 +244,7 @@ The principle function in my code conducts the exception handles, manages the op
 ### Step 5: Create instance of CypherApplication class
 
 ```
+
 if __name__ == "__main__":
     app = CypherApplication(title="Cypher GUI", width=775, height=810)
     app.mainloop()
