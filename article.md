@@ -257,7 +257,7 @@ if __name__ == "__main__":
 ```         
 
 
-At the end of every Tkinter application, a mainloop() method must be created in order to keep the program running, until the user closes the window. This method listens for events, executes the script, and updates the GUI accordingly. Finally, I created an instance of the class, and passed in a title and window dimensions. Please note that I added an if statement at the end of my code. This “gate” is used to prevent the program from executing and merely be imported, if I or other programmers import this module.    
+At the bottom of my code, I added a mainloop() method to keep the program running until the window is closed. This method listens for events, executes the script, and updates the GUI accordingly. Finally, I created an instance of the class, and passed in a title and window dimensions. Please note that I added an if statement at the end of my code. This “gate” is used to prevent the program from executing and merely be imported, if I or other programmers import this module.    
       
 
-And that is all I have for you, folks! If you are interested in the inner workings of my Caesar or Vigenere functions, check out Part 2 of this article. The entirety of my GUI app program is available on GitHub. Thanks for reading and as always, Happy Coding!    
+And that is all I have for you, folks! If you are interested in the inner workings of my Caesar or Vigenere functions, check out Part 2 of this article. The entirety of my GUI app program is available on [GitHub](https://github.com/kimiekomi/code_crack). Thanks for reading and as always, Happy Coding!    
