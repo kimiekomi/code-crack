@@ -71,13 +71,16 @@ class CypherApplication(App):
 
     self.output_box = Text(self.message, width=100, height=15)
     self.output_box.grid(row=3, column=0, padx=10, pady=(10,20))
+    
 ```
 
 <br>
 Every GUI element in Tkinter is considered a widget, including labels, entry fields, text boxes, and buttons. In Tkinter, constructing any widget is always a two-step process. After I created all the necessary widgets, I then added them to the window using the grid method which allows for more customization. The workflow for this application goes from top to bottom then left to right, so that determined the order in which the widgets were positioned. 
 <br>
+<br>
 
 ```
+
     # Options: Labels, Entries, and Buttons
     self.options = LabelFrame(self, text="Options")
     self.options.grid(row=1, column=0, padx=20, pady=(0,10), ipadx=4)
@@ -107,10 +110,12 @@ Every GUI element in Tkinter is considered a widget, including labels, entry fie
     self.keyword_entry = Entry(self.options, width=10, textvariable=self.keyword, state=DISABLED)
     self.keyword_entry.grid(row=1, column=2, pady=(0,10), sticky=W)
     self.keyword.set("friends")
+
 ```
 
 <br>
 The next step involved adding functionality to the buttons. Users are able to select the method and direction in which to cypher their message. To avoid confusion, I disabled an entry field depending on which cypher method was selected.  In other words, if the “Caesar” button was selected, then the keyword entry would be disabled (and vice-a-versa). This was done because the keyword entry only accepts alphabet characters and the offset entry only accepts integers. 
+<br>
 <br>
 
 ```
@@ -142,10 +147,12 @@ The next step involved adding functionality to the buttons. Users are able to se
     self.offset_error_label = Label(self, text=">>> ERROR: Offset value must be an integer")
     self.offset_error_label.grid(row=3, column=0, padx=20, sticky=W)
     self.offset_error_label.grid_remove()
+
 ```
 
 <br>
 To handle user input errors, I created error message labels which will always be hidden unless the user enters “incorrect” data. I also included default settings and values in the application, to expedite the process and enhance the user experience. Whenever the “reset” button is clicked, the program will revert to the default button selections with blank message boxes and hidden error labels.
+<br>
 <br>
 
 ```
@@ -184,6 +191,7 @@ To handle user input errors, I created error message labels which will always be
     def remove_error(self):
       self.keyword_error_label.grid_remove()
       self.offset_error_label.grid_remove()
+
 ```
 
 ### Step 3: Create Caesar and Vigenere cypher functions 
@@ -235,10 +243,12 @@ A bulk of the code is dedicated to defining the Caesar and Vigenere functions. F
     def display_results(self, results):
       self.output_box.delete(1.0, "end")
       self.output_box.insert(1.0, results)
+
 ```
 
 <br>
 The principle function in my code conducts the exception handles, manages the options selections, and displays the results. The exception handling is accomplished in this main function because it is best practice to catch (and resolve) errors sooner than later, before proceeding further along the program. Lastly, I elected to create a separate function to display the results simply to provide the program more modularity and easier debugging. 
+<br>
 <br>
 
 ### Step 5: Create instance of CypherApplication class
@@ -248,10 +258,12 @@ The principle function in my code conducts the exception handles, manages the op
 if __name__ == "__main__":
     app = CypherApplication(title="Cypher GUI", width=775, height=810)
     app.mainloop()
+
 ```
 
 <br>
 At the end of every Tkinter application, a mainloop() method must be created in order to keep the program running, until the user closes the window. This method listens for events, executes the script, and updates the GUI accordingly. Finally, I created an instance of the class, and passed in a title and window dimensions. Please note that I added an if statement at the end of my code. This “gate” is used to prevent the program from executing and merely be imported, if I or other programmers import this module.
 
+<br>
 And that is all I have for you, folks! If you are interested in the inner workings of my Caesar or Vigenere functions, check out Part 2 of this article. The entirety of my GUI app program is available on GitHub. Thanks for reading and as always, Happy Coding! 
 
