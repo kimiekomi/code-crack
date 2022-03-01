@@ -4,7 +4,7 @@ debug = True
 
 def decoder(string, offset):
     
-    if debug: print(f"initialized decoder() with '{str}'")
+    if debug: print(f"initialized decoder() with '{string}'")
 
     string_copy = string.lower()
 
@@ -56,6 +56,8 @@ def decoder(string, offset):
 
 
 decoder("HelLo", 3)
+decoder("Khoor", -3)
+
 
 
 # for offset in range(1, 26):
